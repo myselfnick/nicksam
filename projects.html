@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Nick Sam</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css"> 
+        <script src="theme.js"></script>
+        <script src="applyTheme.js"></script>
+        <link rel="icon" href="assets/images/Icon.png" type="image/x-icon">
+    </head>
+<body>
+<header>
+    <a class="logo" href="index.html"><button1>Nick Sam</button1></a>
+    
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    
+<nav>
+    <ul class="navlinks">
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+    
+    <a href="about.html#contact-form" class="Contact">Contact</a>
+</header>
+
+<section class="Projects">
+    <div class="Showreel-section">
+        <article class="showreel-card" id="showreelCard">
+            <video class="showreel-video" id="showreelVideo" src="videos/Showreel.mp4" poster="images/showreel.gif"></video>
+            <div class="label"><span>🎞 Showreel</span></div>
+            <button class="showreel-play-center" id="showreelBtn">
+                <span>▶</span>
+            </button>
+            <button class="fullscreen-btn" id="fullscreenBtn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                </svg>
+            </button>
+        </article>
+    </div>
+
+    <div class="project-div" id="work">
+            <h1>My Projects</h1>
+            <p>Click on any cover to watch the preview</p>
+        <div class="project-grid">
+            
+            <div class="vertical">
+                <article class="card vert" data-video="videos/V01.mp4" data-type="vert" data-cover="images/V01.jpg">
+                    <img class="cover" src="images/V01.jpg" alt="Project Cover">
+                    <div class="label">Project 01</div>
+                </article>
+                <article class="card vert" data-video="videos/V02.mp4" data-type="vert" data-cover="images/V02.jpg">
+                    <img class="cover" src="images/V02.jpg" alt="Project Cover">
+                    <div class="label">Project 02</div>
+                </article>
+                <article class="card vert" data-video="videos/V03.mp4" data-type="vert" data-cover="images/V03.jpg">
+                    <img class="cover" src="images/V03.jpg" alt="Project Cover">
+                    <div class="label">Project 03</div>
+                </article>
+                <article class="card vert" data-video="videos/V04.mp4" data-type="vert" data-cover="images/V04.jpg">
+                    <img class="cover" src="images/V04.jpg" alt="Project Cover">
+                    <div class="label">Project 04</div>
+                </article>
+                <article class="card vert" data-video="videos/V05.mp4" data-type="vert" data-cover="images/V05.jpg">
+                    <img class="cover" src="images/V05.jpg" alt="Project Cover">
+                    <div class="label">Project 05</div>
+                </article>
+                <article class="card vert" data-video="videos/V06.mp4" data-type="vert" data-cover="images/V06.jpg">
+                    <img class="cover" src="images/V06.jpg" alt="Project Cover">
+                    <div class="label">Project 06</div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- Horizontal Modal -->
+    <div id="playerHorizontal" class="video-modal horizontal-modal">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <span class="close" onclick="closePlayer('playerHorizontal')">&times;</span>
+                <video id="videoHorizontal" controls autoplay></video>
+            </div>
+            <div class="side-nav" id="sideNavHorizontal"></div>
+        </div>
+    </div>
+
+    <!-- Vertical Modal -->
+    <div id="playerVertical" class="video-modal vertical-modal">
+        <div class="modal-wrapper">
+            <div class="modal-content">
+                <span class="close" onclick="closePlayer('playerVertical')">&times;</span>
+                <video id="videoVertical" controls autoplay></video>
+            </div>
+            <div class="side-nav" id="sideNavVertical"></div>
+        </div>
+    </div>
+</section>
+  <section class="Footer">
+     <div class="Footerbg">
+      <div class="footeru">
+       <img class="handshake" src="images/partnership1.jpg" alt="handshake">
+       <h2 class="project-title">Tell me about your next project</h2>
+       <div class="contact-row">
+       <a class="mailbtn" href="mailto:myselfsam01@gmail.com?subject=Hello&body=I%20wanted%20to%20say%20hi!">EMAIL ME</a>
+       <a class="whatsappbtn" href="https://wa.me/918954611201/?text=Hey%20Nick,%20I%20found%20you%20via%20your%20portfolio!
+">WHATSAPP</a>
+       </div>
+      </div>
+      <div class="footerl"> 
+       <div class="copyright">2025 All Right Reserved</div>
+       <nav class="social" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/realnicksam">Linkedin</a>
+        <span class="sep">/</span>
+        <a href="https://in.pinterest.com/realnicksam">Pinterest</a>
+        <span class="sep">/</span>
+        <a href="https://www.instagram.com/myselfnick._">Instagram</a> </nav>
+      </div>
+     </div>
+</section>
+
+  <script>
+    // Showreel functionality
+    const showreelCard = document.getElementById('showreelCard');
+    const showreelVideo = document.getElementById('showreelVideo');
+    const showreelBtn = document.getElementById('showreelBtn');
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+    // Center play button click
+    showreelBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showreelVideo.play();
+        showreelBtn.classList.add('hidden');
+    });
+
+    // Card click to play/pause
+    showreelCard.addEventListener('click', (e) => {
+        if (e.target === fullscreenBtn || e.target.closest('.fullscreen-btn')) return;
+        if (e.target === showreelBtn || e.target.closest('.showreel-play-center')) return;
+        
+        if (showreelVideo.paused) {
+            showreelVideo.play();
+            showreelBtn.classList.add('hidden');
+        } else {
+            showreelVideo.pause();
+            showreelBtn.classList.remove('hidden');
+        }
+    });
+
+    // Auto hide/show play button
+    showreelVideo.addEventListener('play', () => {
+        showreelBtn.classList.add('hidden');
+    });
+
+    showreelVideo.addEventListener('pause', () => {
+        showreelBtn.classList.remove('hidden');
+    });
+
+    showreelVideo.addEventListener('ended', () => {
+        showreelBtn.classList.remove('hidden');
+    });
+
+    // Fullscreen functionality
+    fullscreenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!document.fullscreenElement) {
+            if (showreelCard.requestFullscreen) {
+                showreelCard.requestFullscreen();
+            } else if (showreelCard.webkitRequestFullscreen) {
+                showreelCard.webkitRequestFullscreen();
+            } else if (showreelCard.msRequestFullscreen) {
+                showreelCard.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    });
+
+    // Project gallery functionality
+    let projects = [];
+    let currentIndex = 0;
+
+    function initializeProjects() {
+        projects = [];
+        document.querySelectorAll('.card').forEach((card, index) => {
+            const label = card.querySelector('.label').textContent;
+            projects.push({
+                video: card.dataset.video,
+                type: card.dataset.type,
+                cover: card.dataset.cover,
+                label: label,
+                index: index
+            });
+        });
+    }
+
+    function openPlayer(index) {
+        currentIndex = index;
+        const project = projects[index];
+        const modalId = project.type === 'land' ? 'playerHorizontal' : 'playerVertical';
+        const modal = document.getElementById(modalId);
+        const video = modal.querySelector('video');
+        
+        video.src = project.video;
+        modal.style.display = 'flex';
+        video.play();
+        
+        buildSideNav(modalId, project.type);
+    }
+
+    function buildSideNav(modalId, type) {
+        const sideNavId = modalId === 'playerHorizontal' ? 'sideNavHorizontal' : 'sideNavVertical';
+        const sideNav = document.getElementById(sideNavId);
+        sideNav.innerHTML = '';
+        
+        const filteredProjects = projects.filter(p => p.type === type);
+        
+        filteredProjects.forEach((project) => {
+            const thumb = document.createElement('div');
+            thumb.className = 'nav-thumb';
+            if (project.index === currentIndex) {
+                thumb.classList.add('active');
+            }
+            
+            thumb.innerHTML = `<img src="${project.cover}" alt="${project.label}">`;
+            thumb.onclick = () => switchVideo(project.index, modalId);
+            
+            sideNav.appendChild(thumb);
+        });
+    }
+
+    function switchVideo(index, modalId) {
+        currentIndex = index;
+        const project = projects[index];
+        const video = document.getElementById(modalId === 'playerHorizontal' ? 'videoHorizontal' : 'videoVertical');
+        
+        video.src = project.video;
+        video.play();
+        
+        const sideNavId = modalId === 'playerHorizontal' ? 'sideNavHorizontal' : 'sideNavVertical';
+        document.querySelectorAll(`#${sideNavId} .nav-thumb`).forEach((thumb, idx) => {
+            const filteredProjects = projects.filter(p => p.type === project.type);
+            thumb.classList.toggle('active', filteredProjects[idx].index === index);
+        });
+    }
+
+    function closePlayer(id) {
+        const modal = document.getElementById(id);
+        const video = modal.querySelector('video');
+        video.pause();
+        video.src = '';
+        modal.style.display = 'none';
+    }
+
+    document.querySelectorAll('.video-modal').forEach(modal => {
+        modal.addEventListener('click', e => {
+            if (e.target === modal) {
+                closePlayer(modal.id);
+            }
+        });
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+        initializeProjects();
+        
+        document.querySelectorAll('.card').forEach((card, index) => {
+            card.onclick = () => openPlayer(index);
+        });
+    });
+
+  // Hamburger menu functionality
+  const hamburger = document.querySelector('.hamburger');
+  const navlinks = document.querySelector('.navlinks');
+  const body = document.body;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navlinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+  });
+
+  // Close menu when clicking on a nav link (mobile)
+  const navItems = document.querySelectorAll('.navlinks li a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navlinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    });
+  });
+
+  // Close menu when clicking on the dark overlay
+  body.addEventListener('click', (e) => {
+    if (body.classList.contains('menu-open') && 
+        !hamburger.contains(e.target) && 
+        !navlinks.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navlinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    }
+  });
+
+  </script>
+</body>
+</html>

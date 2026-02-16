@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio | Nick Sam</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css"> 
+        <script src="theme.js"></script>
+        <script src="applyTheme.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" href="assets/images/Icon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+<header>
+    <a class="logo" href="index.html"><button1>Nick Sam</button1></a>
+    
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    
+    <nav>
+        <ul class="navlinks">
+          <li><a href="pricing.html" class="active">Pricing</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    
+    <a href="about.html#contact-form" class="Contact">Contact</a>
+</header>
+
+  <section class="pricing-wrapper">
+    <!-- Header -->
+    <div class="pricing-hero">
+      <h1 class="pricing-main-title">Explore Pricing</h1>
+      <p class="pricing-tagline">Choose a plan that fits your dream. Do not compromise for the less</p>
+    </div>
+
+    <!-- Creator Essentials Category -->
+    <div class="pricing-category">
+      <h2 class="pricing-category-name">Creator Essentials (Short Form)</h2>
+      <p class="pricing-category-description">Short-form editing for <strong>Creators</strong> or <strong>Brands</strong> —from minimal talking-head to cinematic viral-style cuts.</p>
+      
+<!-- Toggle Switch -->
+<div style="text-align: center;">
+  <div class="pricing-switch-box">
+    <div class="switch-pill"></div>
+    <button class="pricing-switch-option option-active" onclick="switchView('service')">Service</button>
+    <button class="pricing-switch-option" onclick="switchView('plan')">Package</button>
+  </div>
+</div>
+
+      <!-- Service Pricing -->
+      <div id="view-service" class="pricing-view view-active">
+        <div class="pricing-tiers">
+          <!-- Basic Service -->
+          <div class="pricing-card tier--basic">
+            <div class="tier-header">
+              <div class="tier-icon">✦</div>
+              <h3 class="tier-label">Basic Service</h3>
+            </div>
+            
+<div class="tier-price">
+  <div class="tier-amount">
+    <span class="price-old">₹1,999</span>
+    <span class="price-new" data-price="₹1,499"></span>
+  </div>
+<div class="festive-card-note"></div>
+
+</div>            
+            <p class="tier-info-text">Essential edits for clean, simple videos — nothing extra, just done right.</p>
+            
+            <ul class="tier-perks-list">
+              <li><span class="perk-check perk-check-alt">✓</span> 1080p Resolution</li>
+              <li><span class="perk-check">✗</span> No Revision</li>
+              <li><span class="perk-check">✓</span> Standard Delivery</li>
+              <li><span class="perk-check">✓</span> Clean Editing (cuts, trims, sync)</li>
+              <li><span class="perk-check">✓</span> Basic Sound Design</li>
+            </ul>
+          </div>
+
+          <!-- Pro Service -->
+          <div class="pricing-card tier--pro">
+            <span class="recommended-badge">Recommended</span>
+            <div class="tier-header">
+              <div class="tier-icon">✦</div>
+              <h3 class="tier-label">Pro Service</h3>
+            </div>
+            
+            <div class="tier-price">
+                <div class="tier-amount">
+    <span class="price-old">₹2,999</span>
+    <span class="price-new" data-price="₹2,499"></span>
+  </div>
+<div class="festive-card-note"></div>
+            </div>
+            
+            <p class="tier-info-text">Cinematic edits with speed & polish — perfect for content creators to stand out.</p>
+            
+            <ul class="tier-perks-list">
+              <li><span class="perk-check">✓</span> 1080p Resolution</li>
+              <li><span class="perk-check">✓</span> 2 Revisions</li>
+              <li><span class="perk-check">✓</span> Priority Delivery</li>
+              <li><span class="perk-check">✓</span> Cinematic Look</li>
+              <li><span class="perk-check">✓</span> Adv. Sound Design</li>
+            </ul>
+          </div>
+
+          <!-- Premium Service -->
+          <div class="pricing-card tier--premium">
+            <div class="tier-header">
+              <div class="tier-icon">✦</div>
+              <h3 class="tier-label">Premium Service</h3>
+            </div>
+            
+            <div class="tier-price">
+                <div class="tier-amount">
+    <span class="price-old">₹5,999</span>
+    <span class="price-new" data-price="₹5,499"></span>
+  </div>
+<div class="festive-card-note"></div>
+            </div>
+            
+            <p class="tier-info-text">High-end 4K, ultra-fast turnaround, and advanced design — to wow audiences.</p>
+            
+            <ul class="tier-perks-list">
+              <li><span class="perk-check">✓</span> 4k Resolution</li>
+              <li><span class="perk-check">✓</span> 5 Revisions</li>
+              <li><span class="perk-check">✓</span> Express Delivery</li>
+              <li><span class="perk-check">✓</span> Cinematic Look + Advanced Vfx</li>
+              <li><span class="perk-check">✓</span> Professional Sound Design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+<!-- Plan Pricing -->
+<div id="view-plan" class="pricing-view">
+  <div class="pricing-tiers">
+
+    <!-- Platinum Plan -->
+    <div class="pricing-card tier--platinum">
+      <div class="tier-header">
+        <div class="tier-icon">✦</div>
+        <h3 class="tier-label">Silver Plan</h3>
+      </div>
+
+      <div class="tier-price">
+        <div class="tier-amount">₹7,199<span class="tier-currency">6 videos</span></div>
+        <span class="tier-savings-pill">save ₹300 per video</span>
+      </div>
+
+      <p class="tier-info-text">
+        For steady creators chasing growth, momentum & best value.
+      </p>
+
+      <ul class="tier-perks-list">
+        <li><span class="perk-check">✓</span> Essential Edits</li>
+        <li><span class="perk-check">✓</span> Scripting Guidance</li>
+        <li><span class="perk-check">✓</span> Hook Suggestions</li>
+        <li><span class="perk-check">✓</span> Monthly Check-in</li>
+        <li><span class="perk-check">✓</span> Basic Motion Graphics Pack</li>
+      </ul>
+    </div>
+
+    <!-- Gold Plan -->
+    <div class="pricing-card tier--gold">
+      <!-- Recommended Tag -->
+      <span class="recommended-badge">Recommended</span>
+
+      <div class="tier-header">
+        <div class="tier-icon">✦</div>
+        <h3 class="tier-label">Gold Plan</h3>
+      </div>
+
+      <div class="tier-price">
+        <div class="tier-amount">₹11,999<span class="tier-currency">6 videos</span></div>
+        <span class="tier-savings-pill">save ₹500 per video</span>
+      </div>
+
+      <p class="tier-info-text">
+        For ambitious creators who want momentum, growth, and best value.
+      </p>
+
+      <ul class="tier-perks-list">
+        <li><span class="perk-check">✓</span> Pro Edits</li>
+        <li><span class="perk-check">✓</span> Scripting & Story Flow Advice</li>
+        <li><span class="perk-check">✓</span> Platform-Focused Growth Strategy</li>
+        <li><span class="perk-check">✓</span> Monthly Creative Review</li>
+        <li><span class="perk-check">✓</span> Custom Branding Elements</li>
+      </ul>
+    </div>
+
+    <!-- Diamond Plan -->
+    <div class="pricing-card tier--diamond">
+      <div class="tier-header">
+        <div class="tier-icon">✦</div>
+        <h3 class="tier-label">Diamond Plan</h3>
+      </div>
+
+      <div class="tier-price">
+        <div class="tier-amount">₹20,999<span class="tier-currency">6 videos</span></div>
+        <span class="tier-savings-pill">save ₹2000 per video</span>
+      </div>
+
+      <p class="tier-info-text">
+        For premium creators chasing maximum impact and authority.
+      </p>
+
+      <ul class="tier-perks-list">
+        <li><span class="perk-check">✓</span> Premium Edits</li>
+        <li><span class="perk-check">✓</span> Full Scripting Support</li>
+        <li><span class="perk-check">✓</span> Signature Style Storytelling</li>
+        <li><span class="perk-check">✓</span> Priority Creative Direction & Feedback</li>
+        <li><span class="perk-check">✓</span> Exclusive Motion Graphics & Titles Pack</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Add pricing categories from Word file here  -->
+
+  </section>
+
+  <section class="Footer">
+     <div class="Footerbg">
+      <div class="footeru">
+       <img class="handshake" src="images/partnership1.jpg" alt="handshake">
+       <h2 class="project-title">Tell me about your next project</h2>
+       <div class="contact-row">
+       <a class="mailbtn" href="mailto:myselfsam01@gmail.com?subject=Hello&body=I%20wanted%20to%20say%20hi!">EMAIL ME</a>
+       <a class="whatsappbtn" href="https://wa.me/918954611201/?text=Hey%20Nick,%20I%20found%20you%20via%20your%20portfolio!
+">WHATSAPP</a>
+       </div>
+      </div>
+      <div class="footerl"> 
+       <div class="copyright">2025 All Right Reserved</div>
+       <nav class="social" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/realnicksam">Linkedin</a>
+        <span class="sep">/</span>
+        <a href="https://in.pinterest.com/realnicksam">Pinterest</a>
+        <span class="sep">/</span>
+        <a href="https://www.instagram.com/myselfnick._">Instagram</a> </nav>
+      </div>
+     </div>
+</section>
+
+<script>
+function switchView(view) {
+  const serviceView = document.getElementById('view-service');
+  const planView = document.getElementById('view-plan');
+  const buttons = document.querySelectorAll('.pricing-switch-option');
+  const pill = document.querySelector('.switch-pill');
+
+  // reset buttons
+  buttons.forEach(btn => btn.classList.remove('option-active'));
+
+  if (view === 'service') {
+    serviceView.classList.add('view-active');
+    planView.classList.remove('view-active');
+
+    buttons[0].classList.add('option-active');
+    pill.style.transform = 'translateX(0)';
+  }
+
+  if (view === 'plan') {
+    planView.classList.add('view-active');
+    serviceView.classList.remove('view-active');
+
+    buttons[1].classList.add('option-active');
+    pill.style.transform = 'translateX(100%)';
+  }
+}
+
+  // Close menu when clicking on a nav link (mobile)
+  const navItems = document.querySelectorAll('.navlinks li a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navlinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    });
+  });
+
+  // Close menu when clicking on the dark overlay
+  body.addEventListener('click', (e) => {
+    if (body.classList.contains('menu-open') && 
+        !hamburger.contains(e.target) && 
+        !navlinks.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navlinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    }
+  });
+  </script>
+</body>
+</html>

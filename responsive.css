@@ -1,0 +1,3404 @@
+/* ==============================
+   🎨 NICK PORTFOLIO - MASTER STYLE
+   ============================== */
+
+/* === ROOT VARIABLES === */
+:root {
+  --bg: #ffffff;
+  --darkbg :#e0e0e0;
+  --text: #000000;
+  --darktext: linear-gradient(135deg, #2c2c54 0%, var(--accent) 100%);
+  --gradient: linear-gradient(90deg, #d8e5ff, #ffe6d3, #e9d8ff);
+  --accent: rgb(102, 0, 255);
+  --accenthover: #4f46e5;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  --hovershadow:  0 5px 15px rgba(99, 102, 241, 0.3);
+  --primary-purple: #5c54e0;
+  --light-purple-bg: #e7e7ff;
+  --background-color: #f1f2f8;
+  --text-dark: #1f2937;
+  --text-medium: #4b5563;
+  --border-light: #f3f4f6;
+  --card-bg: #ffffff;
+}
+
+/* ============================================
+   🌐 RESPONSIVE STYLES
+   ============================================ */
+
+/* ============================================
+   Components   
+   ============================================ */
+
+/* ============================================
+   Header
+   ============================================ */
+
+
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media screen and (max-width: 480px) {
+  header {
+    height: 55px;
+    padding: 0 5%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    z-index: 1002;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+
+  .logo {
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 1003;
+    user-select: none;
+    display: inline-block;
+  }
+
+  /* 🍔 Hamburger menu */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1003;
+    gap: 5px;
+    margin-left: auto;
+  }
+
+  .hamburger div {
+    width: 26px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active .line2 {
+    opacity: 0;
+  }
+
+  .hamburger.active .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  /* 🎬 Sliding Navigation */
+  .navlinks {
+    position: fixed;
+    top: 55px;
+    right: -100%;
+    width: 65%;
+    height: calc(100vh - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--bg);
+    padding-top: 45px;
+    gap: 30px;
+    text-align: center;
+    transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: -3px 0 15px rgba(0,0,0,0.1);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1002;
+  }
+
+  .navlinks.active {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .navlinks li {
+    display: block;
+    width: 100%;
+  }
+
+  .navlinks li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.15rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .navlinks li a:hover,
+  .navlinks li a.active {
+    color: var(--accent);
+  }
+
+  /* 🕶️ Overlay as a separate div */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1001;
+  }
+
+  body.menu-open .overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Hide CTA on mobile */
+  .Contact {
+    display: none;
+  }
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (481px - 768px)
+-------------------------------- */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  header {
+    height: 58px;
+    padding: 0 7%;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .navlinks {
+    position: static;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    gap: 20px;
+    background: none;
+    box-shadow: none;
+    visibility: visible;
+    opacity: 1;
+    right: auto;
+  }
+
+  .navlinks li a {
+    font-size: 0.95rem;
+  }
+
+  .Contact {
+    display: flex;
+    width: 80px;
+    height: 26px;
+    font-size: 15px;
+  }
+}
+
+/* -------------------------------
+   🖥️ Medium Screens (769px - 1024px)
+-------------------------------- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  header {
+    padding: 0 8%;
+  }
+
+  .navlinks {
+    width: 250px;
+  }
+}
+
+/* -------------------------------
+   🚫 Hide hamburger beyond mobile
+-------------------------------- */
+@media screen and (min-width: 481px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
+/* -------------------------------
+   🔄 Landscape Mode for Mobile
+-------------------------------- */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+  .navlinks {
+    padding-top: 15px;
+    gap: 15px;
+    overflow-y: auto;
+  }
+
+  .navlinks li a {
+    padding: 8px 0;
+    font-size: 1rem;
+  }
+}
+
+
+/* ============================================
+    FOOTER — 
+   ============================================ */
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media screen and (max-width: 480px) {
+  .Footerbg {
+    padding: 30px 15px;
+    gap: 25px;
+    width: 90%;
+  }
+
+  .footeru {
+    max-width: 100%;
+    gap: 15px;
+  }
+
+  .handshake {
+    width: 60px;
+    height: 60px;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mailbtn,
+  .whatsappbtn {
+    padding: 10px 22px;
+    font-size: 0.75rem;
+  }
+
+  .footerl {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .copyright,
+  .social {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (481px - 768px)
+-------------------------------- */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .Footerbg {
+    padding: 40px 25px;
+    gap: 30px;
+    width: 90%;
+  }
+
+  .footeru {
+    max-width: 80%;
+    gap: 18px;
+  }
+
+  .handshake {
+    width: 70px;
+    height: 70px;
+  }
+
+  .contact-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .mailbtn,
+  .whatsappbtn {
+    padding: 10px 24px;
+    font-size: 0.8rem;
+  }
+
+  .footerl {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+/* -------------------------------
+   🖥️ Medium Screens (769px - 1024px)
+-------------------------------- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .Footerbg {
+    padding: 45px 35px;
+    width: 90%;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .handshake {
+    width: 75px;
+    height: 75px;
+  }
+
+  .mailbtn,
+  .whatsappbtn {
+    font-size: 0.85rem;
+    padding: 12px 26px;
+  }
+
+  .footerl {
+    justify-content: space-between;
+  }
+}
+
+/* -------------------------------
+   🔄 Landscape Mode for Mobile
+-------------------------------- */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+  .Footerbg {
+    padding: 25px 15px;
+    gap: 15px;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+  }
+
+  .handshake {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mailbtn,
+  .whatsappbtn {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+
+  .footerl {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
+
+
+/* ==============================
+   🎥 HERO SECTION RSPONSIVE STYLE
+   ============================== */
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+
+@media (max-width: 480px) {
+  .hero {
+    height: 290px;
+    gap: 0.5rem;
+    padding: 0.5rem 4% 0 4%;
+    align-items: flex-end;
+  }
+
+  .hero-content{
+    width: 50%;
+    margin-bottom: 15%;
+    gap: 0.5rem;
+  }
+
+  .hero-content .tagline {
+    font-size: 0.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 0.7rem;
+  }
+
+  .hero-content p {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .hero-buttons {
+    gap: 0.6rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.7rem;
+  }
+
+  .hero-visual {
+    width: 200px;
+    height: auto;
+    align-self: flex-end;
+  }
+
+  .hero-visual img {
+    width: 180px;
+    height: auto;
+    display: block;
+  }
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (481px - 600px)
+-------------------------------- */
+@media (min-width: 481px) and (max-width: 600px) {
+  .hero {
+    height: 400px;
+    gap: 1rem;
+    padding: 1rem 4% 0 6%;
+    padding-right: 2%;
+    align-items: flex-end;
+  }
+  
+  .hero-content {
+    width: 55%;
+    gap: 0.8rem;
+    margin-bottom: 15%;
+  }
+  
+  .hero-content .tagline {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.4rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .hero-buttons {
+    gap: 0.8rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .hero-visual {
+    width: 45%;
+    height: auto;
+    align-self: flex-end;
+  }
+  
+  .hero-visual img {
+    width: 260px;
+    height: auto;
+    display: block;
+  }
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (481px - 600px)
+-------------------------------- */
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .hero {
+    height: 450px;
+    gap: 1rem;
+    padding: 1rem 4% 0 6%;
+    padding-right: 2%;
+    align-items: flex-end;
+  }
+  
+  .hero-content {
+    width: 55%;
+    gap: 0.8rem;
+    margin-bottom: 15%;
+  }
+  
+  .hero-content .tagline {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .hero-buttons {
+    gap: 0.8rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .hero-visual {
+    width: 45%;
+    height: auto;
+    align-self: flex-end;
+  }
+  
+  .hero-visual img {
+    width: 300px;
+    height: auto;
+    display: block;
+  }
+}
+
+/* -------------------------------
+   🖥️ Medium Screens (769px - 1024px)
+-------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    height: 500px;
+    gap: 1.5rem;
+    padding: 2.5rem 6% 0 6%;
+    align-items: flex-end;
+  }
+  
+  .hero-content {
+    width: 55%;
+    margin-bottom: 8%;
+    gap: 1rem;
+  }
+  
+  .hero-content .tagline {
+    font-size: 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 4.2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .hero-buttons {
+    gap: 0.9rem;
+  }
+  
+  .btn {
+    padding: 0.85rem 1.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .hero-visual {
+    width: 330px;
+    height: auto;
+    align-self: flex-end;
+  }
+  
+  .hero-visual img {
+    width: 330px;
+    height: auto;
+    display: block;
+  }
+}
+
+/* -------------------------------
+   Screens (1024px - 1150px)
+-------------------------------- */
+@media (min-width: 1024px) and (max-width: 1150px) {
+  .hero {
+    height: 500px;
+    gap: 1.5rem;
+    padding: 2.5rem 6% 0 6%;
+    align-items: flex-end;
+  }
+  
+  .hero-content {
+    width: 55%;
+    margin-bottom: 8%;
+    gap: 1rem;
+  }
+  
+  .hero-content .tagline {
+    font-size: 2rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.7rem;
+    line-height: 1.6;
+  }
+  
+  .hero-buttons {
+    gap: 0.9rem;
+  }
+  
+  .btn {
+    padding: 0.85rem 1.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .hero-visual {
+    width: 330px;
+    height: auto;
+    align-self: flex-end;
+  }
+  
+  .hero-visual img {
+    width: 330px;
+    height: auto;
+    display: block;
+  }
+}
+
+/* ==============================
+   Testimonial SECTION RSPONSIVE STYLE
+   ============================== */
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+   Seamless Infinite Right-to-Left Scroll
+-------------------------------- */
+@media (max-width: 480px) {
+  .tb-container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .tb-header {
+    margin-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .tb-subtitle {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  
+  .tb-title {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  
+  .tb-section {
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .tb-section-label {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  
+  /* Scroll track wrapper */
+  .tb-grid {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll-seamless 15s linear infinite;
+  }
+  
+  /* Pause animation on hover */
+  .tb-grid:hover {
+    animation-play-state: paused;
+  }
+  
+  .tb-creator-item,
+  .tb-brand-item {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+  
+  .tb-brand-name {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+  
+  /* Seamless Animation */
+  @keyframes scroll-seamless {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-95%);
+    }
+  }
+}
+
+/* ==============================
+   💻 Tablets & Small Laptops (481px - 600px)
+   ============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+  .tb-container {
+    max-width: 100%;
+    padding: 0 5%;
+  }
+  
+  .tb-header {
+    margin-bottom: 25px;
+  }
+  
+  .tb-subtitle {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  
+  .tb-title {
+    font-size: 28px;
+  }
+  
+  .tb-section {
+    margin-bottom: 25px;
+  }
+  
+  .tb-section-label {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+  
+  .tb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 25px;
+  }
+  
+  .tb-creator-item,
+  .tb-brand-item {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .tb-brand-name {
+    font-size: 11px;
+  }
+}
+
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (600px - 768px)
+-------------------------------- */
+@media (min-width: 601px) and (max-width: 768px) {
+  .tb-container {
+    max-width: 100%;
+    padding: 0 6%;
+  }
+  
+  .tb-header {
+    margin-bottom: 28px;
+  }
+  
+  .tb-subtitle {
+    font-size: 13px;
+    letter-spacing: 3.5px;
+  }
+  
+  .tb-title {
+    font-size: 32px;
+  }
+  
+  .tb-section {
+    margin-bottom: 28px;
+  }
+  
+  .tb-section-label {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  
+  .tb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 28px;
+  }
+  
+  .tb-creator-item,
+  .tb-brand-item {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .tb-brand-name {
+    font-size: 12px;
+  }
+}
+
+/* ==============================
+   🖥️ Medium Screens (769px - 1024px)
+   ============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tb-container {
+    width: 90%;
+  }
+  
+  .tb-subtitle {
+    font-size: 14px;
+  }
+  
+  .tb-title {
+    font-size: 34px;
+  }
+  
+  .tb-section-label {
+    font-size: 15px;
+  }
+  
+  .tb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 28px;
+    max-width: 900px;
+  }
+  
+  .tb-creator-item,
+  .tb-brand-item {
+    width: 95px;
+    height: 95px;
+  }
+  
+  .tb-brand-name {
+    font-size: 13px;
+  }
+}
+
+
+
+/* -------------------------------
+   Screens (1024px - 1150px)
+-------------------------------- */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  .tb-container {
+    width: 90%;
+  }
+  
+  .tb-subtitle {
+    font-size: 14.5px;
+  }
+  
+  .tb-title {
+    font-size: 35px;
+  }
+  
+  .tb-section-label {
+    font-size: 15.5px;
+  }
+  
+  .tb-grid {
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 29px;
+    max-width: 950px;
+  }
+  
+  .tb-creator-item,
+  .tb-brand-item {
+    width: 98px;
+    height: 98px;
+  }
+  
+  .tb-brand-name {
+    font-size: 13.5px;
+  }
+}
+
+/* ==============================
+   Services SECTION RSPONSIVE STYLE
+   ============================== */
+
+/* ==============================
+   📱 Mobile Devices (350px - 480px)
+============================== */
+@media (max-width: 480px) {
+  .services-div{
+    width: 90%;
+  }
+  .service-header {
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 4% 5%;
+    margin: 0px 0px 0px;
+    padding-top: 0px;
+  }
+
+  .service-header h1,
+  .service-header h1 span {
+    font-size: 1.3rem;
+  }
+
+.services-btn {
+  width: 30%;
+  height: 35px;
+  text-align: center;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+/* Service Cards */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto; /* centers each card within its grid cell */
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* responsive single/multi columns */
+  justify-content: center; /* centers grid within container */
+  align-items: start; /* aligns items at the top of each cell */
+  gap: 20px;
+  background-color: linear-gradient(90deg, #d8e5ff, #ffe6d3, #e9d8ff);
+  border-radius: 20px;
+  padding: 20px;
+}
+}
+
+
+/* ==============================
+   💻 Tablets (481px - 768px)
+============================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .service-header {
+    justify-content: space-between;
+    padding: 3% 5%;
+    gap: 20px;
+    margin: 0px 0px 0px;
+  }
+
+  .service-header h1,
+  .service-header h1 span {
+    font-size: 1.1rem;
+  }
+
+  .services-btn {
+    width: 90px;
+    height: 30px;
+    line-height: 2;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 3% 5%;
+  }
+}
+
+/* ==============================
+   🖥️ Medium Screens (769px - 1024px)
+============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+.service-header{
+  padding: 3% 5%;
+  margin: 0px 0px 0px;
+}
+  .service-header h1,
+  .service-header h1 span {
+    font-size: 30px;
+    gap: 30px;
+  }
+.services-div{
+  width: 90%;
+}
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+/* ==============================
+   🖥️ Large Screens (1025px+)
+============================== */
+@media (min-width: 1025px) {
+  .service-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 5%;
+    margin: 0px 0px 0px;    
+  }
+
+  .service-header h1,
+  .service-header h1 span {
+    font-size: 34px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    padding: 3% 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* ==============================
+   REVIEW SECTION
+============================== */
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media (max-width: 480px) {
+  .testimonial-section {
+    min-height: 50vh;
+    padding: 20px 5%;
+  }
+
+  .testimonial-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .testimonial-header {
+    margin-bottom: 25px;
+  }
+
+  .testimonial-title {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-subtitle {
+    font-size: 0.875rem;
+  }
+
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .testimonial-card {
+    padding: 20px 15px;
+    border-radius: 15px;
+    min-width: 20px;
+  }
+
+  .profile-pic {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 12px;
+  }
+
+  .quote-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 15px;
+  }
+
+  .review-text {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .reviewer-name {
+    font-size: 1.125rem;
+  }
+
+  .reviewer-role {
+    font-size: 0.75rem;
+  }
+
+  .progress-dots {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    height: 6px;
+  }
+
+  .dot.inactive {
+    width: 6px;
+  }
+
+  .dot.active {
+    width: 24px;
+  }
+}
+
+/* ==============================
+   💻 Tablets & Small Laptops (481px - 600px)
+   ============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+  .testimonial-section {
+    min-height: 55vh;
+    padding: 25px 5%;
+  }
+
+  .testimonial-header {
+    margin-bottom: 30px;
+  }
+
+  .testimonial-title {
+    font-size: 1.875rem;
+  }
+
+  .testimonial-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-wrapper {
+    gap: 20px;
+  }
+
+  .nav-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .testimonial-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 13px;
+  }
+
+  .quote-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 16px;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .reviewer-name {
+    font-size: 1.25rem;
+  }
+
+  .reviewer-role {
+    font-size: 0.8rem;
+  }
+
+  .progress-dots {
+    gap: 9px;
+    margin-top: 24px;
+  }
+
+  .dot {
+    height: 7px;
+  }
+
+  .dot.inactive {
+    width: 7px;
+  }
+
+  .dot.active {
+    width: 28px;
+  }
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (600px - 768px)
+-------------------------------- */
+@media (min-width: 601px) and (max-width: 768px) {
+  .testimonial-section {
+    min-height: 58vh;
+    padding: 20px 5%;
+  }
+
+  .testimonial-header {
+    margin-bottom: 35px;
+  }
+
+  .testimonial-title {
+    font-size: 2.25rem;
+  }
+
+  .testimonial-subtitle {
+    font-size: 1rem;
+  }
+
+  .testimonial-wrapper {
+    gap: 24px;
+  }
+
+  .nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .testimonial-card {
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .profile-pic {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 14px;
+  }
+
+  .quote-icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 18px;
+  }
+
+  .review-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 26px;
+  }
+
+  .reviewer-name {
+    font-size: 1.375rem;
+  }
+
+  .reviewer-role {
+    font-size: 0.85rem;
+  }
+
+  .progress-dots {
+    margin-top: 26px;
+  }
+}
+
+/* ==============================
+   🖥️ Medium Screens (769px - 1024px)
+   ============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .testimonial-section {
+    min-height: 60vh;
+  }
+
+  .testimonial-header {
+    margin-bottom: 38px;
+  }
+
+  .testimonial-title {
+    font-size: 2.5rem;
+  }
+
+  .testimonial-subtitle {
+    font-size: 1.0625rem;
+  }
+
+  .testimonial-wrapper {
+    gap: 26px;
+  }
+
+  .nav-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .nav-btn svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .testimonial-card {
+    padding: 28px 20px;
+    border-radius: 19px;
+  }
+
+  .profile-pic {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 14px;
+  }
+
+  .quote-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 19px;
+  }
+
+  .review-text {
+    font-size: 1.0625rem;
+    line-height: 1.68;
+    margin-bottom: 28px;
+  }
+
+  .reviewer-name {
+    font-size: 1.5rem;
+  }
+
+  .reviewer-role {
+    font-size: 0.9rem;
+  }
+
+  .progress-dots {
+    margin-top: 28px;
+  }
+}
+
+/* -------------------------------
+   🖥️ Screens (1024px - 1150px)
+-------------------------------- */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  .testimonial-section {
+    min-height: 60vh;
+  }
+
+  .testimonial-header {
+    margin-bottom: 40px;
+  }
+
+  .testimonial-title {
+    font-size: 2.75rem;
+  }
+
+  .testimonial-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-wrapper {
+    gap: 28px;
+  }
+
+  .nav-btn {
+    width: 54px;
+    height: 54px;
+  }
+
+  .nav-btn svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .testimonial-card {
+    padding: 29px 20px;
+    border-radius: 20px;
+  }
+
+  .profile-pic {
+    width: 95px;
+    height: 95px;
+  }
+
+  .quote-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .review-text {
+    font-size: 1.1rem;
+    line-height: 1.69;
+    margin-bottom: 29px;
+  }
+
+  .reviewer-name {
+    font-size: 1.625rem;
+  }
+
+  .reviewer-role {
+    font-size: 0.92rem;
+  }
+
+  .progress-dots {
+    margin-top: 29px;
+  }
+}
+
+
+/* ==============================
+  FAQ SECTION - RESPONSIVE STYLES
+   ============================== */
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media (max-width: 480px) {
+  .faq-container {
+    width: 90%;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .intro-text-group {
+    font-size: 0.75rem;
+  }
+
+  .intro-text-group svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .intro-heading {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro-description {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    padding-top: 0.75rem;
+  }
+
+  .accordion-list {
+    gap: 0.75rem;
+  }
+
+  .faq-button {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .icon-wrapper {
+    padding: 0.375rem;
+    margin-left: 0.5rem;
+  }
+
+  .icon-wrapper svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .faq-content {
+    padding: 0 1rem;
+  }
+
+  .faq-content p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .open-padding {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+
+/* ==============================
+   💻 Tablets & Small Laptops (481px - 600px)
+   ============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+  .faq-container {
+    padding: 1.75rem;
+    gap: 1.75rem;
+  }
+
+  .intro-text-group {
+    font-size: 0.8125rem;
+  }
+
+  .intro-text-group svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .intro-heading {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .intro-description {
+    font-size: 0.9375rem;
+    line-height: 1.6rem;
+  }
+
+  .accordion-list {
+    gap: 0.875rem;
+  }
+
+  .faq-button {
+    padding: 1.1rem;
+    font-size: 0.9375rem;
+  }
+
+  .icon-wrapper {
+    padding: 0.4375rem;
+    margin-left: 0.75rem;
+  }
+
+  .icon-wrapper svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .faq-content {
+    padding: 0 1.25rem;
+  }
+
+  .faq-content p {
+    font-size: 0.9375rem;
+    line-height: 1.6rem;
+  }
+
+  .open-padding {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (600px - 768px)
+-------------------------------- */
+@media (min-width: 601px) and (max-width: 768px) {
+  .faq-container {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .intro-heading {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .intro-description {
+    font-size: 0.9375rem;
+    line-height: 1.6rem;
+  }
+
+  .faq-button {
+    font-size: 0.9375rem;
+  }
+
+  .icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .faq-content p {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ==============================
+   🖥️ Medium Screens (769px - 1024px)
+   ============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .faq-container {
+    padding: 2.25rem;
+    gap: 2.25rem;
+  }
+
+  .intro-heading {
+    font-size: 2.125rem;
+    line-height: 2.75rem;
+  }
+
+  .intro-description {
+    font-size: 0.9375rem;
+    line-height: 1.65rem;
+  }
+
+  .faq-button {
+    font-size: 0.9375rem;
+  }
+
+  .faq-content p {
+    font-size: 0.9375rem;
+  }
+}
+
+/* -------------------------------
+   Screens (1024px - 1150px)
+-------------------------------- */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  .faq-container {
+    padding: 2.375rem;
+  }
+
+  .intro-heading {
+    font-size: 2.125rem;
+    line-height: 2.875rem;
+  }
+}
+
+/* ==============================
+  Services Page - RESPONSIVE STYLES
+   ============================== */
+
+/* ==============================
+   📱 Mobile Devices (350px - 480px)
+   ============================== */
+@media (max-width: 480px) {
+  .pricing-tiers {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .pricing-card {
+    width: 90%;
+    height: auto;
+    padding: 0px 20px;
+    padding-top: 20px;
+    border-radius: 20px;
+  }
+
+  .pricing-hero,
+  .pricing-category-name,
+  .pricing-category-description {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-main-title { font-size: 2.5rem; }
+  .pricing-tagline { font-size: 1rem; }
+  .pricing-category-name { font-size: 1.5rem; }
+  .pricing-category-description { font-size: 0.95rem; }
+
+  .tier-label { font-size: 1rem; }
+  .tier-amount { font-size: 1.8rem; }
+  .tier-currency { font-size: 0.9rem; }
+  .tier-savings-pill { font-size: 0.8rem; padding: 4px 12px; }
+  .tier-info-text { font-size: 0.85rem; }
+  .tier-perks-list li { font-size: 0.85rem; gap: 8px;  }
+  .tier-icon { width: 40px; height: 40px; font-size: 20px; }
+  .tier-action { font-size: 0.95rem; padding: 12px; }
+}
+
+/* ==============================
+   💻 Tablets & Small Laptops (481px - 600px)
+   ============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+  .pricing-tiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .pricing-card {
+    width: 90%;
+    height: auto;
+    padding: 30px 25px;
+    border-radius: 25px;
+  }
+
+  .pricing-hero,
+  .pricing-category-name,
+  .pricing-category-description {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-main-title { font-size: 3rem; }
+  .pricing-tagline { font-size: 1.1rem; }
+  .pricing-category-name { font-size: 1.7rem; }
+  .pricing-category-description { font-size: 1rem; }
+
+  .tier-label { font-size: 1.1rem; }
+  .tier-amount { font-size: 2rem; }
+  .tier-currency { font-size: 0.95rem; }
+  .tier-savings-pill { font-size: 0.85rem; padding: 5px 14px; }
+  .tier-info-text { font-size: 0.9rem; }
+  .tier-perks-list li { font-size: 0.9rem; gap: 10px; }
+  .tier-icon { width: 45px; height: 45px; font-size: 22px; }
+  .tier-action { font-size: 1rem; padding: 14px; }
+}
+
+/* ==============================
+   💻 Tablets & Small Laptops (601px - 768px)
+   ============================== */
+@media (min-width: 601px) and (max-width: 768px) {
+  .pricing-tiers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .pricing-card {
+    width: 90%;
+    height: auto;
+    padding: 35px 30px;
+    border-radius: 28px;
+  }
+
+  .pricing-hero,
+  .pricing-category-name,
+  .pricing-category-description {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-main-title { font-size: 3.5rem; }
+  .pricing-tagline { font-size: 1.15rem; }
+  .pricing-category-name { font-size: 1.9rem; }
+  .pricing-category-description { font-size: 1.05rem; }
+
+  .tier-label { font-size: 1.15rem; }
+  .tier-amount { font-size: 2.2rem; }
+  .tier-currency { font-size: 0.95rem; }
+  .tier-savings-pill { font-size: 0.9rem; padding: 5px 15px; }
+  .tier-info-text { font-size: 0.95rem; }
+  .tier-perks-list li { font-size: 0.95rem; gap: 11px; }
+  .tier-icon { width: 48px; height: 48px; font-size: 23px; }
+  .tier-action { font-size: 1.05rem; padding: 15px; }
+}
+
+/* ==============================
+   🖥️ Medium Screens (769px - 1024px)
+   ============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pricing-tiers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .pricing-card {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    padding: 38px 33px;
+    border-radius: 28px;
+  }
+
+  .pricing-hero,
+  .pricing-category-name,
+  .pricing-category-description {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-main-title { font-size: 3.8rem; }
+  .pricing-tagline { font-size: 1.2rem; }
+  .pricing-category-name { font-size: 2rem; }
+  .pricing-category-description { font-size: 1.1rem; }
+
+  .tier-label { font-size: 1.2rem; }
+  .tier-amount { font-size: 2.4rem; }
+  .tier-currency { font-size: 1rem; }
+  .tier-savings-pill { font-size: 0.95rem; padding: 5px 16px; }
+  .tier-info-text { font-size: 0.95rem; }
+  .tier-perks-list li { font-size: 0.95rem; gap: 12px; }
+  .tier-icon { width: 50px; height: 50px; font-size: 24px; }
+  .tier-action { font-size: 1.1rem; padding: 16px; }
+}
+
+/* ==============================
+   Screens (1025px - 1150px)
+   ============================== */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  .pricing-tiers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .pricing-card {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    padding: 40px 35px;
+    border-radius: 30px;
+  }
+
+  .pricing-hero,
+  .pricing-category-name,
+  .pricing-category-description {
+    width: 90%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pricing-main-title { font-size: 4rem; }
+  .pricing-tagline { font-size: 1.2rem; }
+  .pricing-category-name { font-size: 2rem; }
+  .pricing-category-description { font-size: 1.1rem; }
+
+  .tier-label { font-size: 1.25rem; }
+  .tier-amount { font-size: 2.5rem; }
+  .tier-currency { font-size: 1rem; }
+  .tier-savings-pill { font-size: 0.95rem; padding: 6px 16px; }
+  .tier-info-text { font-size: 0.95rem; }
+  .tier-perks-list li { font-size: 0.95rem; gap: 12px; }
+  .tier-icon { width: 50px; height: 50px; font-size: 24px; }
+  .tier-action { font-size: 1.1rem; padding: 16px; }
+}
+
+
+/* ==============================
+   About Me Page 
+   ============================== */
+
+/* ==============================
+    About me section
+   ============================== */
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media (max-width: 480px) {
+  .about-me {
+    padding: 0 0px;
+  }
+.about-me-content{
+  width: 90%;
+}
+  .portrait-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .tagline {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .story {
+    font-size: 0.9rem;
+    padding: 15px 20px;
+    line-height: 1.4;
+  }
+}
+
+/* ==============================
+   💻 Tablets & Small Laptops (481px - 600px)
+============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+  .about-me {
+    padding: 0 0px;
+  }
+.about-me-content{
+  width: 90%;
+}
+  .portrait-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .tagline {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+  }
+
+  .story {
+    font-size: 1rem;
+    padding: 18px 25px;
+    line-height: 1.5;
+  }
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (601px - 768px)
+-------------------------------- */
+@media (min-width: 601px) and (max-width: 768px) {
+  .about-me {
+    padding: 0 0px;
+  }
+.about-me-content{
+  width: 90%;
+}
+  .portrait-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .tagline {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .story {
+    font-size: 1.1rem;
+    padding: 20px 28px;
+    line-height: 1.6;
+  }
+}
+
+/* ==============================
+   🖥️ Medium Screens (769px - 1024px)
+============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-me {
+    padding: 0 0px;
+  }
+.about-me-content{
+  width: 90%;
+}
+  .portrait-container {
+    width: 210px;
+    height: 210px;
+  }
+
+  .tagline {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  .story {
+    font-size: 1.15rem;
+    padding: 20px 30px;
+    line-height: 1.65;
+  }
+}
+
+/* -------------------------------
+   Screens (1025px - 1150px)
+-------------------------------- */
+@media (min-width: 1025px) and (max-width: 1150px) {
+   .about-me {
+    padding: 0 0px;
+  }
+.about-me-content{
+  width: 90%;
+}
+
+  .portrait-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .tagline {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .story {
+    font-size: 1.2rem;
+    padding: 20px 30px;
+    line-height: 1.7;
+  }
+}
+
+/* ==============================
+slills  
+============================== */
+
+@media (max-width: 480px) {
+
+.skill-card{
+  margin: 0 15%;
+}
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .skill-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media (max-width: 480px) {
+  .philosophy {
+    padding: 60px 5%;
+    text-align: center;
+  }
+
+  .philosophy-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .philosophy-text .quote {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .philosophy-text p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .philosophy-visual {
+    height: 100px; /* horizontal, not too tall */
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+
+  .timeline-year {
+    font-size: 16px;
+  }
+
+  .timeline-content {
+    padding: 12px;
+  }
+
+  .beyond h2 {
+    font-size: 26px;
+  }
+
+  .beyond .hobby {
+    font-size: 16px;
+  }
+
+  .interest-item {
+    font-size: 40px;
+  }
+}
+
+/* ==============================
+   💻 Tablets & Small Laptops (481px - 600px)
+============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+  .philosophy {
+    padding: 70px 5%;
+    text-align: center;
+  }
+
+  .philosophy-text h2 {
+    font-size: 34px;
+  }
+
+  .philosophy-text .quote {
+    font-size: 18px;
+  }
+
+  .philosophy-text p {
+    font-size: 15px;
+  }
+
+  .philosophy-visual {
+    height: 160px;
+  }
+
+  .timeline-year {
+    font-size: 18px;
+  }
+
+  .timeline-content {
+    padding: 15px;
+  }
+
+  .beyond h2 {
+    font-size: 30px;
+  }
+
+  .beyond .hobby {
+    font-size: 18px;
+  }
+
+  .interest-item {
+    font-size: 48px;
+  }
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (600px - 768px)
+-------------------------------- */
+@media (min-width: 601px) and (max-width: 768px) {
+  .philosophy {
+    padding: 80px 8%;
+    text-align: center;
+  }
+
+  .philosophy-text h2 {
+    font-size: 38px;
+  }
+
+  .philosophy-text .quote {
+    font-size: 20px;
+  }
+
+  .philosophy-text p {
+    font-size: 16px;
+  }
+
+  .philosophy-visual {
+    height: 180px;
+  }
+
+  .timeline-year {
+    font-size: 20px;
+  }
+
+  .timeline-content {
+    padding: 18px;
+  }
+
+  .beyond h2 {
+    font-size: 34px;
+  }
+
+  .beyond .hobby {
+    font-size: 18px;
+  }
+
+  .interest-item {
+    font-size: 56px;
+  }
+}
+
+/* ==============================
+   🖥️ Medium Screens (769px - 1024px)
+============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .philosophy {
+    padding: 90px 10%;
+    text-align: center;
+  }
+
+  .philosophy-text h2 {
+    font-size: 42px;
+  }
+
+  .philosophy-text .quote {
+    font-size: 22px;
+  }
+
+  .philosophy-text p {
+    font-size: 17px;
+  }
+
+  .philosophy-visual {
+    height: 200px;
+  }
+
+  .timeline-year {
+    font-size: 22px;
+  }
+
+  .timeline-content {
+    padding: 18px;
+  }
+
+  .beyond h2 {
+    font-size: 38px;
+  }
+
+  .beyond .hobby {
+    font-size: 20px;
+  }
+
+  .interest-item {
+    font-size: 60px;
+  }
+}
+
+/* -------------------------------
+   Screens (1024px - 1150px)
+-------------------------------- */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  .philosophy {
+    padding: 100px 10%;
+    text-align: center;
+  }
+
+  .philosophy-text h2 {
+    font-size: 46px;
+  }
+
+  .philosophy-text .quote {
+    font-size: 24px;
+  }
+
+  .philosophy-text p {
+    font-size: 18px;
+  }
+
+  .philosophy-visual {
+    height: 220px;
+  }
+
+  .timeline-year {
+    font-size: 24px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .beyond h2 {
+    font-size: 40px;
+  }
+
+  .beyond .hobby {
+    font-size: 20px;
+  }
+
+  .interest-item {
+    font-size: 64px;
+  }
+}
+
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media (max-width: 480px) {
+
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .contact-intro {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-intro p {
+    font-size: 0.9rem;
+  }
+
+  .contact-info,
+  .form {
+    width: 100%;
+  }
+
+  .info-card {
+    padding: 10px 15px;
+  }
+
+  .info-card h4 {
+    font-size: 0.8rem;
+  }
+
+  .contact-form {
+    padding: 15px;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .form-submit {
+    font-size: 0.9rem;
+    padding: 10px 25px;
+  }
+}
+
+
+/* ==============================
+   💻 Tablets (481px - 600px)
+   ============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .contact-intro {
+    text-align: center;
+    width: 90%;
+    height: 400px;
+  }
+
+  .contact-intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-intro p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  .contact-info,
+  .form {
+    width: 90%;
+    gap: 2rem;
+  }
+
+  .info-card {
+    padding: 12px 20px;
+  }
+
+  .info-card h4 {
+    font-size: 0.85rem;
+  }
+
+  .form-submit {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+}
+
+
+/* ==============================
+   💻 Tablets & Small Laptops (601px - 768px)
+   ============================== */
+@media (min-width: 601px) and (max-width: 768px) {
+
+  .contact-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .contact-intro {
+    width: 90%;
+    text-align: center;
+  }
+
+  .form {
+    width: 90%;
+  }
+
+  .info-card h4 {
+    font-size: 0.85rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.95rem;
+  }
+
+  .form-submit {
+    font-size: 1rem;
+  }
+}
+
+
+/* ==============================
+   💻 Medium Screens (769px - 1024px)
+   ============================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .contact-section {
+    width: 90%;
+    gap: 2rem;
+  }
+
+  .contact-intro h2 {
+    font-size: 2rem;
+  }
+
+  .contact-intro p {
+    font-size: 1rem;
+  }
+
+  .info-card h4 {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ======================================================
+   📱 RESPONSIVE MODAL BEHAVIOR (Side-Nav Position Logic)
+====================================================== */
+
+/* -------------------------------
+   📱 Mobile Devices (350px - 480px)
+-------------------------------- */
+@media (min-width: 350px) and (max-width: 480px) {
+
+  /* Showreel Section */
+.Showreel-section {
+    width: 90%;
+    box-shadow: var(--shadow);
+    padding: 10px;
+}
+.showreel-card {
+    border-radius: 10px;
+}
+
+/* Center play button */
+.showreel-play-center {
+    font-size: 1.4rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+}
+/* Fullscreen button */
+.fullscreen-btn {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+}
+.label {
+    top: 09px;
+    left: 09px;
+    padding: 4px 6px;
+    border-radius: 06px;
+    font-weight: 400;
+    font-size: 9px;
+}
+
+  /* Shared styling for both modals */
+  #playerHorizontal .modal-wrapper,
+  #playerVertical .modal-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack video and nav */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 🎞 Vertical Modal (side-nav to the RIGHT) */
+  #playerVertical .modal-wrapper {
+    flex-direction: row; /* Video left, nav right */
+  }
+
+  #playerVertical .modal-content {
+    order: 1;
+    width: 75%;
+    max-width: 80vw;
+  }
+
+  #playerVertical .side-nav {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* 🎬 Horizontal Modal (side-nav BELOW video) */
+  #playerHorizontal .modal-wrapper {
+    flex-direction: column; /* Video above, nav below */
+  }
+
+  #playerHorizontal .modal-content {
+    order: 1;
+    width: 100%;
+  }
+
+  #playerHorizontal .side-nav {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* Project div */
+.project-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    width: 90%;
+}
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 20px;
+}
+
+.horizontal{
+    width: 100%;
+    flex-wrap: wrap;
+}
+.card.land {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vertical {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card.vert {
+    aspect-ratio: 9/16;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+}
+/* ==============================
+   💻 Tablets & Small Laptops (481px - 600px)
+============================== */
+@media (min-width: 481px) and (max-width: 600px) {
+
+  /* Showreel Section */
+.Showreel-section {
+    width: 90%;
+    box-shadow: var(--shadow);
+    padding: 10px;
+}
+.showreel-card {
+    border-radius: 15px;
+}
+
+/* Center play button */
+.showreel-play-center {
+    font-size: 1.6rem;
+    border: 2.5px solid rgba(255, 255, 255, 0.8);
+    width: 50px;
+    height: 50px;
+}
+/* Fullscreen button */
+.fullscreen-btn {
+    bottom: 0.7rem;
+    right: 0.7rem;
+    font-size: 1.3rem;
+    width: 35px;
+    height: 35px;
+}
+.label {
+    top: 11px;
+    left: 11px;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+
+  #playerHorizontal .modal-wrapper,
+  #playerVertical .modal-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #playerVertical .side-nav {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    width: 85%;
+    margin-top: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  #playerVertical .modal-content {
+    order: 1;
+    width: 85%;
+  }
+  /* 🎬 Horizontal Modal (side-nav BELOW video) */
+  #playerHorizontal .modal-wrapper {
+    flex-direction: column; /* Video above, nav below */
+  }
+
+  #playerHorizontal .modal-content {
+    order: 1;
+    width: 100%;
+  }
+
+  #playerHorizontal .side-nav {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* Project div */
+.project-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    width: 90%;
+}
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 20px;
+}
+
+.horizontal{
+    width: 100%;
+    flex-wrap: wrap;
+}
+.card.land {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vertical {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card.vert {
+    aspect-ratio: 9/16;
+    width: 90%;
+    border-radius: 10px;
+}
+}
+
+
+/* -------------------------------
+   💻 Tablets (600px - 768px)
+-------------------------------- */
+@media (min-width: 601px) and (max-width: 768px) {
+
+  /* Showreel Section */
+.Showreel-section {
+    width: 90%;
+    box-shadow: var(--shadow);
+    padding: 10px;
+}
+.showreel-card {
+    border-radius: 15px;
+}
+
+/* Center play button */
+.showreel-play-center {
+    font-size: 1.6rem;
+    border: 2.5px solid rgba(255, 255, 255, 0.8);
+    width: 50px;
+    height: 50px;
+}
+/* Fullscreen button */
+.fullscreen-btn {
+    bottom: 0.7rem;
+    right: 0.7rem;
+    font-size: 1.3rem;
+    width: 35px;
+    height: 35px;
+}
+.label {
+    top: 11px;
+    left: 11px;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+  #playerHorizontal .modal-wrapper,
+  #playerVertical .modal-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #playerHorizontal .side-nav,
+  #playerVertical .side-nav {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin-top: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  #playerHorizontal .modal-content,
+  #playerVertical .modal-content {
+    order: 1;
+    width: 80%;
+  }
+
+  /* Project div */
+.project-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    width: 90%;
+}
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 20px;
+}
+
+.horizontal{
+    width: 100%;
+    flex-wrap: wrap;
+}
+.card.land {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vertical {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card.vert {
+    aspect-ratio: 9/16;
+    width: 85%;
+    border-radius: 10px;
+}
+
+}
+
+/* -------------------------------
+   💻 Tablets & Small Laptops (769px - 1024px)
+-------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* Showreel Section */
+.Showreel-section {
+    width: 90%;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    border-radius: 20px;
+}
+.showreel-card {
+    border-radius: 20px;
+}
+
+/* Center play button */
+.showreel-play-center {
+    font-size: 1.6rem;
+    border: 2.5px solid rgba(255, 255, 255, 0.8);
+    width: 50px;
+    height: 50px;
+}
+/* Fullscreen button */
+.fullscreen-btn {
+    bottom: 0.7rem;
+    right: 0.7rem;
+    font-size: 1.3rem;
+    width: 35px;
+    height: 35px;
+}
+
+
+  #playerHorizontal .modal-wrapper,
+  #playerVertical .modal-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #playerHorizontal .side-nav,
+  #playerVertical .side-nav {
+    order: 2;
+    flex-direction: column;
+    width: auto;
+    margin-left: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #playerHorizontal .modal-content,
+  #playerVertical .modal-content {
+    flex: 2;
+    width: auto;
+    max-width: 65vw;
+  }
+
+  /* Project div */
+.project-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    width: 90%;
+}
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+}
+
+.horizontal{
+    width: 100%;
+    flex-wrap: wrap;
+}
+.card.land {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vertical {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card.vert {
+    aspect-ratio: 9/16;
+    width: 80%;
+    border-radius: 10px;
+}
+
+}
+
+/* -------------------------------
+   💻 Small Laptops (1024px - 1150px)
+-------------------------------- */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  #playerHorizontal .modal-wrapper,
+  #playerVertical .modal-wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #playerHorizontal .side-nav,
+  #playerVertical .side-nav {
+    order: 2;
+    flex-direction: column;
+    width: auto;
+    margin-left: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #playerHorizontal .modal-content,
+  #playerVertical .modal-content {
+    flex: 2;
+    width: auto;
+    max-width: 65vw;
+  }
+
+    /* Project div */
+.project-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    width: 90%;
+}
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.horizontal{
+    width: 100%;
+    flex-wrap: wrap;
+}
+.card.land {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vertical {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card.vert {
+    aspect-ratio: 9/16;
+    width: 80%;
+    border-radius: 10px;
+}
+
+
+}
+
+
+@media (max-width: 350px) {
+
+  /* Project div */
+.project-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    width: 90%;
+}
+/* Project Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.horizontal{
+    width: 100%;
+    flex-wrap: wrap;
+}
+.card.land {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vertical {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card.vert {
+    aspect-ratio: 9/16;
+    width: 90%;
+    border-radius: 10px;
+}
+
+  /* Showreel Section */
+.Showreel-section {
+    width: 90%;
+    box-shadow: var(--shadow);
+    padding: 10px;
+}
+.showreel-card {
+    border-radius: 10px;
+}
+
+/* Center play button */
+.showreel-play-center {
+    font-size: 1.4rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+}
+/* Fullscreen button */
+.fullscreen-btn {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+}
+.label {
+    top: 09px;
+    left: 09px;
+    padding: 4px 6px;
+    border-radius: 06px;
+    font-weight: 400;
+    font-size: 9px;
+}
+
+}
+/* Ensure cards can hold absolute elements */
+.pricing-card {
+  position: relative;
+}
+
+/* Recommended badge */
+.recommended-badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  background:     
+  var(--accent) border-box;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  border-color: white;
+}
+
+
+/* ==============================
+   🎆 SUBTLE FESTIVE GREETING
+   ============================== */
+
+/* Hidden by default */
+.festive-greeting {
+  display: none;
+}
+
+/* Only visible when New Year mode is ON */
+body.festival-new-year .festive-greeting {
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.98);
+  backdrop-filter: blur(14px);
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+  opacity: 0;
+  animation: festiveFadeIn 0.8s ease forwards;
+  z-index: 999;
+}
+
+.festive-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+}
+
+.festive-sub {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+@keyframes festiveFadeIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+/* Confetti — also only active in New Year mode */
+body.festival-new-year .confetti {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: confettiFall 3.5s linear forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+/* ==============================
+   🎊 FESTIVE Services page
+   ============================== */
+
+.festive-card-note {
+
+
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  padding: 4px 12px;
+  border-radius: 999px;
+
+  letter-spacing: 0.2px;
+
+  opacity: 0;              /* hidden by default */
+  pointer-events: none;
+}
+
+/* -------------------------------
+   💘 VALENTINE FESTIVE NOTE
+   ------------------------------- */
+
+body.festive.valentine .festive-card-note {
+  background: rgba(230, 57, 70, 0.08);
+  color: #8a2c3a;
+  opacity: 1;
+    margin: 12px auto 6px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+body.festive.valentine .festive-card-note::before {
+  content: "💗";
+  animation: heartPulse 2.4s ease-in-out infinite;
+}
+
+/* Optional placeholder for future icons/effects */
+body.festive.valentine .festive-card-note::after {
+  content: "Valentine week benefit included";
+}
+
+/* Subtle, calm pulse */
+@keyframes heartPulse {
+  0%   { opacity: 0.9; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+/* -------------------------------
+   🌈 HOLI FESTIVE NOTE
+   ------------------------------- */
+
+body.festive.holi .festive-card-note {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 195, 0, 0.12),
+    rgba(255, 87, 34, 0.10),
+    rgba(63, 81, 181, 0.10)
+  );
+  color: #4a3b2a;
+  opacity: 1;
+  margin: 12px auto 6px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+}
+
+/* Festive icon */
+body.festive.holi .festive-card-note::before {
+  content: "🎨";
+  animation: colorFloat 2.6s ease-in-out infinite;
+}
+
+/* Text controlled via CSS */
+body.festive.holi .festive-card-note::after {
+  content: "Festive Holi benefit included";
+}
+
+/* Soft festive motion — no disco */
+@keyframes colorFloat {
+  0%   { opacity: 0.85; transform: translateY(0); }
+  50%  { opacity: 1; transform: translateY(-1px); }
+  100% { opacity: 0.85; transform: translateY(0); }
+}
+/* -------------------------------
+   🌙 EID FESTIVE NOTE
+   ------------------------------- */
+
+body.festive.eid .festive-card-note {
+  background: rgba(3, 226, 63, 0.12);
+  color: #1f5523;
+  margin: 12px auto 6px;
+  opacity: 1;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+}
+
+body.festive.eid .festive-card-note::before {
+  content: "🌙";
+  animation: moonGlow 3s ease-in-out infinite;
+}
+
+body.festive.eid .festive-card-note::after {
+  content: "Festive Eid benefit included";
+}
+
+@keyframes moonGlow {
+  0% { opacity: 0.85; }
+  50% { opacity: 1; }
+  100% { opacity: 0.85; }
+}
+
+/* -------------------------------
+   🪔 DIWALI FESTIVE NOTE
+   ------------------------------- */
+
+body.festive.diwali .festive-card-note {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 193, 7, 0.15),
+    rgba(255, 152, 0, 0.12)
+  );
+  color: #5a3b12;
+  margin: 12px auto 6px;
+  width: fit-content;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+}
+
+body.festive.diwali .festive-card-note::before {
+  content: "🪔";
+  animation: diyaFlicker 2.8s ease-in-out infinite;
+}
+
+body.festive.diwali .festive-card-note::after {
+  content: "Festive Diwali benefit included";
+}
+
+@keyframes diyaFlicker {
+  0% { opacity: 0.85; }
+  50% { opacity: 1; }
+  100% { opacity: 0.85; }
+}
+/* -------------------------------
+   🎄 CHRISTMAS FESTIVE NOTE
+   ------------------------------- */
+
+body.festive.christmas .festive-card-note {
+  background: rgba(200, 30, 30, 0.08);
+  color: #5b1d1d;
+  opacity: 1;
+  margin: 12px auto 6px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+}
+
+body.festive.christmas .festive-card-note::before {
+  content: "🎄";
+  animation: cozyPulse 3s ease-in-out infinite;
+}
+
+body.festive.christmas .festive-card-note::after {
+  content: "Festive Christmas benefit included";
+}
+
+@keyframes cozyPulse {
+  0% { opacity: 0.9; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+/* -------------------------------
+   🎆 NEW YEAR FESTIVE NOTE
+   ------------------------------- */
+   
+
+body.festive.newyear .festive-card-note {
+  background: linear-gradient(
+    90deg,
+    rgba(63, 81, 181, 0.14),
+    rgba(0, 188, 212, 0.12)
+  );
+  color: #1e2a5a;
+  opacity: 1;
+  margin: 12px auto 6px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+}
+
+body.festive.newyear .festive-card-note::before {
+  content: "🎆";
+  animation: riseUp 2.5s ease-in-out infinite;
+}
+
+body.festive.newyear .festive-card-note::after {
+  content: "New Year festive benefit included";
+}
+
+@keyframes riseUp {
+  0% { opacity: 0.85; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-1px); }
+  100% { opacity: 0.85; transform: translateY(0); }
+}

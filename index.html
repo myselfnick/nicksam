@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio | Nick Sam</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="responsive.css"> 
+        <script src="theme.js"></script>
+        <script src="applyTheme.js"></script>    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" href="assets/images/Icon.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+<a class="logo" href="index.html">
+  <span class="logo-text">Nick Sam</span>
+</a>
+
+
+    
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    
+    <nav>
+        <ul class="navlinks">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    
+    <a href="about.html" class="Contact">Contact</a>
+</header>
+<section class="hero">
+<!-- Festive Floating Decorations -->
+<div class="festive-floating-layer">
+  <span class="festive-float float-1"></span>
+  <span class="festive-float float-2"></span>
+  <span class="festive-float float-3"></span>
+  <span class="festive-float float-4"></span>
+</div>
+
+
+        
+  <div class="hero-content">
+    <span class="tagline">Creativity beyond the cut</span>
+    <h1>Nick Sam</h1>
+    <h2>Video Editor | Content Director</h2>
+    <p>
+      Turning raw footage into cinematic stories <br> — adding a spark of magic in every frame.
+    </p>
+    <div class="hero-buttons">
+      <a href="projects.html" class="btn primary">Showreel</a>
+      <a href="projects.html#work" class="btn secondary">Work</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="image"><img src="images/Hero.png" alt="Hero Images" /></div>
+  </div>
+</section>
+
+
+
+<section class="tb-container">
+  <div class="tb-header">
+    <h1 class="tb-title">Real Stories, Real Creators</h1>
+    <p class="tb-tagline">Not Famous Brands or Creators — just rising stars waiting to shine.</p>
+  </div>
+
+  <!-- Creators Grid -->
+  <div id="tb-creators-grid" class="tb-grid">
+    <div class="tb-loading">Loading creators...</div>
+  </div>
+</section>
+
+
+
+<section class="services-sec">
+    <div class="services-div">
+        <div class="service-header">
+            <h1>What We Serve <span>For Your Business</span></h1>
+            <a href="pricing.html" class="services-btn">Our Pricing</a>
+        </div>
+        <div class="services-grid">
+            <a class="service-card">
+                <div class="service-icon-bg">🎞️</div>
+                <h3>Video Editing</h3>
+                <p>Make every second count with crisp, dynamic edits built to hook your audience.</p>
+            </a>
+
+            <a class="service-card">
+                <div class="service-icon-bg">🎨</div>
+                <h3>Content Design</h3>
+                <p>Lighting, mic setup, and motion graphics that make your content instantly recognizable.</p>
+            </a>
+            <a class="service-card">
+                <div class="service-icon-bg">🎧</div>
+                <h3>Sound Design</h3>
+                <p>Clean audio, impactful effects, and soundtracks that amplify your story.</p>
+            </a>
+            <a class="service-card">
+                <div class="service-icon-bg">📝</div>
+                <h3>Content Planning</h3>
+                <p>Structured content, optimized schedules, and ideas that resonate with your audience.</p>
+            </a>            
+        </div>
+    </div>
+</section>
+
+  <section class="testimonial-section">
+    <div class="testimonial-container">
+      <div class="testimonial-header">
+        <h2 class="testimonial-title">What Our Clients Say</h2>
+        <p class="testimonial-subtitle"></p>
+      </div>
+
+      <div class="testimonial-wrapper">
+        <button class="nav-btn" id="prevBtn" aria-label="Previous testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="card-container" id="cardContainer">
+          <div class="testimonial-card" id="testimonialCard">
+            <div class="card-content">
+              <img src="" alt="" class="profile-pic" id="profilePic">
+          
+              <p class="review-text" id="reviewText"></p>
+              
+              <h3 class="reviewer-name" id="reviewerName"></h3>
+              <p class="reviewer-Location" id="reviewer-Location"></p>
+            </div>
+
+            <div class="progress-dots" id="progressDots"></div>
+          </div>
+        </div>
+
+        <button class="nav-btn" id="nextBtn" aria-label="Next testimonial">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+<section class="FAQ-section">
+  <div class="faq-container">
+    <!-- LEFT SIDE -->
+    <div class="intro-column">
+      <div class="intro-text-group">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+        Frequently asked questions
+      </div>
+
+      <h1 class="intro-heading">Frequently Asked <span>Questions</span></h1>
+
+      <p class="intro-description">
+        Choose a plan that fits your business needs and budget. No hidden fees, no surprises—just straightforward pricing for powerful creative collaboration.
+      </p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="accordion-column accordion-list">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-button" onclick="toggleAccordion(this)" data-target="answer-1">
+          What services do you offer?
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              class="icon-transition">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="answer-1" class="faq-content">
+          <p>We’re a full-service creative studio offering <strong>video editing</strong>, 
+            <strong>sound design</strong>, and <strong>content strategy</strong>
+              to make your brand and creations stand out.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-button" onclick="toggleAccordion(this)" data-target="answer-2">
+          How can I start a project with you?
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              class="icon-transition">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="answer-2" class="faq-content">
+          <p>Just reach out via our contact form, share your project details, and we’ll schedule a quick chat to define the scope and timeline before we begin.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-button" onclick="toggleAccordion(this)" data-target="answer-3">
+          How long does a project usually take?
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              class="icon-transition">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="answer-3" class="faq-content">
+          <p>Most projects take around <strong>3–7 business days</strong>, depending on complexity. Larger projects come with detailed timelines.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-button" onclick="toggleAccordion(this)" data-target="answer-4">
+          What are your prices or packages?
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              class="icon-transition">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="answer-4" class="faq-content">
+          <p>We offer flexible <strong>project-based pricing</strong> and retainer plans. Check out our Pricing section or contact us for a custom quote.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-button" onclick="toggleAccordion(this)" data-target="answer-5">
+          Do you offer revisions?
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              class="icon-transition">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="answer-5" class="faq-content">
+          <p>Absolutely. Each project includes <strong>two free revision rounds</strong> to refine the final result. Additional revisions can be arranged if needed.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <button class="faq-button" onclick="toggleAccordion(this)" data-target="answer-6">
+          How do I receive my final files?
+          <span class="icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+              class="icon-transition">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </button>
+        <div id="answer-6" class="faq-content">
+          <p>Final deliverables are shared via a secure <strong>Google Drive</strong> or <strong>Dropbox link</strong> with all file formats you need — MP4, PNG, SVG, and more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="Footer">
+     <div class="Footerbg">
+      <div class="footeru">
+       <img class="handshake" src="images/partnership1.jpg" alt="handshake">
+       <h2 class="project-title">Tell me about your next project</h2>
+       <div class="contact-row">
+       <a class="mailbtn" href="mailto:myselfnick01@gmail.com?subject=Hey%2C%20I%20saw%20your%20portfolio%20and%20loved%20the%20energy%E2%80%94let%E2%80%99s%20connect%21
+">EMAIL ME</a>
+       <a class="whatsappbtn" href="https://wa.me/918954611201/?text=Hey%2C%20I%20saw%20your%20portfolio%20and%20loved%20the%20energy%E2%80%94let%E2%80%99s%20connect%21
+">WHATSAPP</a>
+       </div>
+      </div>
+      <div class="footerl"> 
+       <div class="copyright">2025 All Right Reserved</div>
+       <nav class="social" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/realnicksam">Linkedin</a>
+        <span class="sep">/</span>
+        <a href="https://in.pinterest.com/realnicksam">Pinterest</a>
+        <span class="sep">/</span>
+        <a href="https://www.instagram.com/myselfnick._">Instagram</a> </nav>
+      </div>
+     </div>
+</section>
+
+<!-- 🎆 Subtle Festive Greeting -->
+<div class="festive-greeting" id="festiveGreeting">
+  🎉
+</div>
+
+</body>
+  <script>
+
+
+/* ==============================
+   FAQ's Section 
+   ============================== */
+function toggleAccordion(button) {
+  const faqItem = button.closest(".faq-item");
+  const targetId = button.getAttribute("data-target");
+  const targetEl = document.getElementById(targetId);
+  const icon = button.querySelector(".icon-transition");
+
+  const isClosed =
+    targetEl.style.maxHeight === "0px" || !targetEl.style.maxHeight;
+
+  // Close all others
+  document.querySelectorAll(".faq-content").forEach((openEl) => {
+    if (openEl.id !== targetId && openEl.style.maxHeight !== "0px") {
+      const openItem = openEl.closest(".faq-item");
+      const openIcon =
+        openItem.querySelector(".icon-transition");
+
+      openEl.classList.remove("open-padding");
+      openEl.style.maxHeight = openEl.scrollHeight + "px";
+      void openEl.offsetWidth;
+      openEl.style.maxHeight = "0px";
+
+      openIcon.classList.remove("rotate-180");
+      openItem.classList.remove("active"); // 🔑 IMPORTANT
+    }
+  });
+
+  // Toggle current
+  if (isClosed) {
+    targetEl.classList.add("open-padding");
+    targetEl.style.maxHeight = targetEl.scrollHeight + 50 + "px";
+    icon.classList.add("rotate-180");
+    faqItem.classList.add("active"); // 🔑 IMPORTANT
+
+    targetEl.addEventListener(
+      "transitionend",
+      function handler(e) {
+        if (e.propertyName === "max-height") {
+          targetEl.style.maxHeight = "none";
+          targetEl.removeEventListener("transitionend", handler);
+        }
+      },
+      { once: true }
+    );
+  } else {
+    if (targetEl.style.maxHeight === "none" || !targetEl.style.maxHeight) {
+      targetEl.style.maxHeight = targetEl.scrollHeight + "px";
+    }
+    void targetEl.offsetWidth;
+    targetEl.style.maxHeight = "0px";
+    targetEl.classList.remove("open-padding");
+    icon.classList.remove("rotate-180");
+    faqItem.classList.remove("active"); // 🔑 IMPORTANT
+  }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".faq-content").forEach((el) => {
+    el.style.maxHeight = "0px";
+  });
+});
+
+/* ==============================
+   Reviews Section
+   ============================== */
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Google Sheet CSV URL
+  const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR8gTEvwrL-I6PPzwEYDHrr4yusSEm1FA6y9Pl97KXcOkeaYUHNPVHpehBo-ro35sVShVIopU-oagfx/pub?output=csv';
+
+  // Fallback testimonials
+  let testimonials = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      role: "CEO, TechStart",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+      review: "Working with this team has been an absolute game-changer for our business. Their attention to detail and commitment to excellence is unmatched."
+    },
+    {
+      id: 2,
+      name: "Michael Chen",
+      role: "Product Manager, InnovateCo",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+      review: "The results exceeded our expectations. Professional, responsive, and incredibly talented. Highly recommend to anyone looking for quality work."
+    },
+    {
+      id: 3,
+      name: "Emily Rodriguez",
+      role: "Marketing Director, BrandWave",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+      review: "An exceptional experience from start to finish. They brought our vision to life with creativity and precision. Couldn't be happier with the outcome."
+    }
+  ];
+
+  // DOM Elements
+  const card = document.getElementById('testimonialCard');
+  const cardContainer = document.getElementById('cardContainer');
+  const profilePic = document.getElementById('profilePic');
+  const reviewText = document.getElementById('reviewText');
+  const reviewerName = document.getElementById('reviewerName');
+  const reviewerRole = document.getElementById('reviewer-Location');
+  const progressDots = document.getElementById('progressDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (!card || !cardContainer || !profilePic) return; // Safety check
+
+  let current = 0;
+  let isHovered = false;
+  let isAnimating = false;
+  let autoPlayInterval;
+
+  /* ------------------------------
+     CSV Fetch & Parse
+  ------------------------------ */
+  async function fetchTestimonialsFromSheet() {
+    try {
+      const response = await fetch(GOOGLE_SHEET_CSV_URL);
+      const csvData = await response.text();
+      const parsedData = parseCSV(csvData);
+      if (parsedData.length) {
+        testimonials = parsedData;
+      }
+      initializeSlider();
+    } catch (err) {
+      console.warn('Google Sheet failed, using fallback testimonials.');
+      initializeSlider();
+    }
+  }
+
+  function parseCSV(csv) {
+    const lines = csv.split(/\r?\n/);
+    const result = [];
+    for (let i = 1; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
+      // Split on comma but ignore commas inside quotes
+      const values = lines[i].match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+      if (values && values.length >= 4) {
+        result.push({
+          id: i,
+          name: values[0].trim().replace(/^"|"$/g, ''),
+          role: values[1].trim().replace(/^"|"$/g, ''),
+          image: values[2].trim().replace(/^"|"$/g, ''),
+          review: values[3].trim().replace(/^"|"$/g, '')
+        });
+      }
+    }
+    return result;
+  }
+
+  /* ------------------------------
+     Slider Functions
+  ------------------------------ */
+  function updateCard() {
+    const testimonial = testimonials[current];
+    profilePic.src = testimonial.image;
+    profilePic.alt = testimonial.name;
+    reviewText.textContent = testimonial.review;
+    reviewerName.textContent = testimonial.name;
+    reviewerRole.textContent = testimonial.role;
+    updateDots();
+  }
+
+  function createDots() {
+    progressDots.innerHTML = '';
+    testimonials.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = i === current ? 'dot active' : 'dot inactive';
+      dot.setAttribute('data-index', i);
+      dot.addEventListener('click', () => goToSlide(i));
+      progressDots.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    Array.from(progressDots.children).forEach((dot, i) => {
+      dot.className = i === current ? 'dot active' : 'dot inactive';
+    });
+  }
+
+  function goToSlide(index) {
+    if (isAnimating || index === current) return;
+    animateSlide(index);
+  }
+
+  function handleNext() {
+    animateSlide((current + 1) % testimonials.length);
+  }
+
+  function handlePrev() {
+    animateSlide((current - 1 + testimonials.length) % testimonials.length);
+  }
+
+  function animateSlide(nextIndex) {
+    if (isAnimating) return;
+    isAnimating = true;
+    card.classList.add('animating');
+    setTimeout(() => {
+      current = nextIndex;
+      updateCard();
+      card.classList.remove('animating');
+      isAnimating = false;
+    }, 300);
+  }
+
+  /* ------------------------------
+     Auto Play
+  ------------------------------ */
+  function startAutoPlay() {
+    clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      if (!isHovered) handleNext();
+    }, 7000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+  }
+
+  /* ------------------------------
+     Event Listeners
+  ------------------------------ */
+  nextBtn.addEventListener('click', () => {
+    handleNext();
+    startAutoPlay();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    handlePrev();
+    startAutoPlay();
+  });
+
+  cardContainer.addEventListener('mouseenter', () => isHovered = true);
+  cardContainer.addEventListener('mouseleave', () => isHovered = false);
+
+  /* ------------------------------
+     Initialize
+  ------------------------------ */
+  function initializeSlider() {
+    updateCard();
+    createDots();
+    startAutoPlay();
+  }
+
+  fetchTestimonialsFromSheet();
+
+});
+
+/* ==============================
+   Trusted By Section - Creators Only
+   ============================== */
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS7NrTd5e8l4yveoCPJnCr4DJP7ApNwsVKLSxuSpuQMxDH8j1Zf0IwKlNwAKhY3PrgyazmaoiHqM0JA/pub?gid=1059057383&single=true&output=csv';
+
+// Utility: fade in
+function fadeIn(element) {
+  element.style.opacity = 0;
+  element.style.display = 'grid';
+  let opacity = 0;
+  const fade = setInterval(() => {
+    opacity += 0.05;
+    if (opacity >= 1) clearInterval(fade);
+    element.style.opacity = opacity;
+  }, 30);
+}
+
+// Fetch & parse CSV
+async function fetchSheetData() {
+  try {
+    const res = await fetch(SHEET_URL);
+    const csv = await res.text();
+    const rows = csv.trim().split(/\r?\n/);
+    const data = [];
+
+    for (let i = 1; i < rows.length; i++) {
+      const cols = rows[i].match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
+      const creator = cols[0]?.replace(/^"|"$/g, '').trim();
+      if (creator) data.push({ creator });
+    }
+
+    console.log('Parsed Creators:', data);
+    return data;
+  } catch (err) {
+    console.error('Error fetching sheet', err);
+    throw err;
+  }
+}
+
+// Render creators only
+function renderCreators(data) {
+  const grid = document.getElementById('tb-creators-grid');
+
+  if (!data.length) {
+    grid.innerHTML = `<div class="tb-empty">No creators found.</div>`;
+    return;
+  }
+
+  grid.innerHTML = data.map((item, i) => `
+    <div class="tb-creator-item">
+      <img src="${item.creator}" alt="Creator ${i+1}" 
+           onerror="this.src='https://via.placeholder.com/150/333/fff?text=Creator'">
+    </div>
+  `).join('');
+
+  fadeIn(grid);
+}
+
+// Init
+async function initTrustedBy() {
+  const grid = document.getElementById('tb-creators-grid');
+  grid.innerHTML = `<div class="tb-loading">Loading creators...</div>`;
+
+  try {
+    const data = await fetchSheetData();
+    renderCreators(data);
+  } catch (err) {
+    console.error(err);
+    grid.innerHTML = `<div class="tb-error">⚠️ Failed to load creators.</div>`;
+  }
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', initTrustedBy);
+
+// Call init on page load
+document.addEventListener('DOMContentLoaded', initTrustedBy);
+
+document.addEventListener('DOMContentLoaded', initTrustedBy);
+
+  // Hamburger menu functionality
+  const hamburger = document.querySelector('.hamburger');
+  const navlinks = document.querySelector('.navlinks');
+  const body = document.body;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navlinks.classList.toggle('active');
+    body.classList.toggle('menu-open');
+  });
+
+  // Close menu when clicking on a nav link (mobile)
+  const navItems = document.querySelectorAll('.navlinks li a');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navlinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    });
+  });
+
+  // Close menu when clicking on the dark overlay
+  body.addEventListener('click', (e) => {
+    if (body.classList.contains('menu-open') && 
+        !hamburger.contains(e.target) && 
+        !navlinks.contains(e.target)) {
+      hamburger.classList.remove('active');
+      navlinks.classList.remove('active');
+      body.classList.remove('menu-open');
+    }
+  });
+
+const greeting = document.getElementById('festiveGreeting');
+let celebrated = false;
+
+greeting.addEventListener('click', () => {
+  if (celebrated) return;
+  celebrated = true;
+
+  shootConfetti();
+
+  // Soft fade out
+  setTimeout(() => {
+    greeting.style.opacity = '0';
+    greeting.style.transform = 'translateY(10px) scale(0.95)';
+  }, 800);
+
+  setTimeout(() => greeting.remove(), 1500);
+});
+
+function shootConfetti() {
+  const colors = ['#667eea', '#764ba2', '#ffd166', '#06d6a0', '#ef476f'];
+  const count = 80; // Dense, festive rain
+
+  for (let i = 0; i < count; i++) {
+    const confetti = document.createElement('div');
+    confetti.className = 'confetti';
+
+    confetti.style.left = Math.random() * 100 + 'vw';
+    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+    // Slight stagger for burst feel
+    confetti.style.animationDelay = Math.random() * 0.4 + 's';
+
+    // Random size for richness
+    const size = Math.random() * 6 + 6;
+    confetti.style.width = size + 'px';
+    confetti.style.height = size + 'px';
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+      confetti.remove();
+    }, 4000);
+  }
+}
+
+
+
+ </script>
+</html>
